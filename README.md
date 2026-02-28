@@ -2,17 +2,6 @@
 
 A minimalist, high-end portfolio website for a Data Analyst & Storyteller. This version is built using pure HTML, CSS (Tailwind CDN), and Vanilla JavaScript for maximum simplicity and easy deployment.
 
-## 🚀 How to Deploy to GitHub
-
-To get this website live on your own GitHub account, follow these simple steps:
-
-### 1. Create a new GitHub Repository
-- Go to [GitHub](https://github.com) and create a new repository named `portfolio`.
-- Keep it **Public**.
-
-### 2. Upload your files
-- Download the `index.html` and `.github` folder from this project.
-- Upload them directly to your new GitHub repository.
 
 ### 3. Enable GitHub Pages
 - In your GitHub repository, go to **Settings** > **Pages**.
@@ -26,4 +15,4 @@ To get this website live on your own GitHub account, follow these simple steps:
 - **SEO Optimized**: Meta tags and social sharing ready.
 
 ---
-Created with ❤️ by ALPHYS
+Created with by ALPHYS
