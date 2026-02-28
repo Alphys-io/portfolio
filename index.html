@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHYS | Data Analyst & Storyteller</title>
+    <meta name="description" content="Innovative data analyst and Computer Science graduate specializing in transforming raw data into meaningful narratives and actionable business insights.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                @apply bg-[#0a0a0a] text-white selection:bg-emerald-500/30;
+            }
+        }
+        @layer components {
+            .glass {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .animate-bounce-slow {
+            animation: bounceSlow 4s ease-in-out infinite;
+        }
+        
+        .delay-300 { animation-delay: 300ms; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        
+        .nav-logo-hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+        
+        .menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 py-6 sm:py-8 flex justify-between items-center mix-blend-difference transition-all duration-300">
+        <div id="nav-logo" class="text-lg sm:text-xl font-display font-bold tracking-tighter transition-all duration-500">
+            <a href="#">ALPHYS</a>
+        </div>
+
+        <!-- Menu Toggle -->
+        <button id="menu-toggle" class="p-2 text-white z-50 focus:outline-none">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+        </button>
+
+    </nav>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" class="fixed inset-0 w-full h-screen bg-zinc-950/60 backdrop-blur-2xl hidden flex flex-col items-center justify-center gap-8 sm:gap-12 z-40 overflow-hidden border-t border-white/5">
+        <a href="#about" class="menu-link opacity-0 translate-y-4 text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-[0.2em] pl-[0.2em] text-center hover:text-emerald-400 transition-all duration-700">About</a>
+        <a href="#skills" class="menu-link opacity-0 translate-y-4 text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-[0.2em] pl-[0.2em] text-center hover:text-emerald-400 transition-all duration-700">Skills</a>
+        <a href="#projects" class="menu-link opacity-0 translate-y-4 text-4xl sm:text-6xl md:text-7xl font-display font-bold uppercase tracking-[0.2em] pl-[0.2em] text-center hover:text-emerald-400 transition-all duration-700">Projects</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex flex-col items-center justify-center overflow-hidden px-4">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-emerald-500/10 rounded-full blur-[80px] sm:blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-[80px] sm:blur-[120px]"></div>
+        </div>
+
+        <!-- Glassmorphic Composition -->
+        <div class="relative z-10 flex flex-col items-center w-full">
+            <div class="relative w-64 h-80 sm:w-80 sm:h-96 flex items-center justify-center">
+                <!-- The Hand Image -->
+                <img 
+                    src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800" 
+                    alt="Hand"
+                    class="absolute bottom-0 w-full h-auto object-contain opacity-80 grayscale brightness-125"
+                    style="filter: drop-shadow(0 0 20px rgba(255,255,255,0.1)); mask-image: linear-gradient(to top, transparent, black 20%);"
+                >
+
+                <!-- Glass Box -->
+                <div class="absolute inset-0 glass rounded-3xl flex items-center justify-center overflow-hidden">
+                    <!-- Branded Logo -->
+                    <div class="relative">
+                        <div class="animate-bounce-slow">
+                            <svg viewBox="0 0 100 100" class="w-24 h-24 sm:w-32 sm:h-32 text-white/90 drop-shadow-2xl" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 5L95 50L50 95L5 50L50 5Z" stroke="currentColor" stroke-width="1" />
+                                <path d="M50 15L85 50L50 85L15 50L50 15Z" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Text -->
+            <div class="mt-8 sm:mt-12 text-center w-full px-4">
+                <h1 class="text-4xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-[0.2em] leading-none block pl-[0.3em] animate-fade-in-up">
+                    ALPHYS
+                </h1>
+                <p class="text-sm sm:text-xl md:text-2xl font-light tracking-[0.3em] md:tracking-[0.5em] uppercase text-zinc-400 mt-1 sm:mt-2 block w-full pl-[0.4em] md:pl-[0.5em] animate-fade-in-up delay-300">
+                    Within Your Reach
+                </p>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-pulse">
+            <span class="text-[10px] uppercase tracking-[0.5em] text-zinc-500 font-light">Explore</span>
+            <div class="w-px h-12 bg-gradient-to-b from-emerald-500 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 sm:gap-20 items-center">
+            <div class="relative flex justify-center">
+                <div class="w-full max-w-[220px] sm:max-w-[350px] aspect-square rounded-full border border-zinc-800 p-3 sm:p-4 relative">
+                    <div class="absolute inset-0 rounded-full border border-emerald-500/20 animate-pulse"></div>
+                    <div class="w-full h-full rounded-full overflow-hidden bg-zinc-900 flex items-center justify-center">
+                        <svg viewBox="0 0 100 100" class="w-24 sm:w-40 h-24 sm:h-40 text-emerald-500/20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 5L95 50L50 95L5 50L50 5Z" stroke="currentColor" stroke-width="1" />
+                            <path d="M50 15L85 50L50 85L15 50L50 15Z" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6 sm:space-y-8 text-center md:text-left">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight">
+                    Telling your story through <span class="text-gradient">Data, Visuals and Construct</span>
+                </h2>
+                <div class="space-y-4 sm:space-y-6 text-zinc-400 text-base sm:text-lg leading-relaxed">
+                    <h3 class="text-white font-medium text-lg sm:text-xl">About the Analyst</h3>
+                    <p>
+                        I am an innovative, adaptable, and self-motivated Computer Science graduate with a deep enthusiasm for transforming raw data into meaningful narratives. My approach is defined by determination and a solution-oriented mindset, thriving in collaborative environments where I can tackle complex challenges.
+                    </p>
+                    <p>
+                        Resourceful and highly organized, I excel at prioritizing tasks in multitasking scenarios. I am quick at receiving, assimilating, and evaluating information to complete any task efficiently. My ultimate aspiration is to become a <span class="text-white italic">"Storyteller behind the data"</span>, bridging the gap between technical complexity and actionable business insights.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 sm:py-32 bg-zinc-950/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 sm:gap-20">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <h2 class="text-4xl sm:text-5xl font-display font-bold mb-6">Expertise</h2>
+                    <p class="text-zinc-500">A blend of technical proficiency and professional strategy to drive data-led decisions.</p>
+                </div>
+                
+                <div class="md:w-2/3 grid sm:grid-cols-2 gap-8 sm:gap-12">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-center md:justify-start gap-3 text-emerald-400">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                            <h4 class="text-lg font-bold uppercase tracking-widest">Technical</h4>
+                        </div>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Python</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">SQL</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Excel</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Microsoft Office 365</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Graphics Design</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Data Analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-center md:justify-start gap-3 text-cyan-400">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                            <h4 class="text-lg font-bold uppercase tracking-widest">Professional</h4>
+                        </div>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-cyan-500/50 transition-colors">Interpersonal Communication</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-cyan-500/50 transition-colors">Time Management</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-cyan-500/50 transition-colors">Performance Tracking</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-cyan-500/50 transition-colors">Adaptability</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-cyan-500/50 transition-colors">Strategic Planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Slider Section -->
+    <section id="projects" class="py-20 sm:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 sm:mb-16 flex flex-col sm:flex-row justify-between items-center sm:items-end gap-8">
+            <div class="text-center sm:text-left">
+                <h2 class="text-4xl sm:text-5xl font-display font-bold">Selected Works</h2>
+                <p class="text-zinc-500 mt-4">Exploring workforce dynamics, product performance, and global health trends.</p>
+            </div>
+            <div class="flex gap-4">
+                <button id="prev-project" class="p-3 sm:p-4 rounded-full border border-zinc-800 hover:bg-zinc-900 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                </button>
+                <button id="next-project" class="p-3 sm:p-4 rounded-full border border-zinc-800 hover:bg-zinc-900 transition-colors">
+                    <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="relative px-4 sm:px-6">
+            <div id="project-container" class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center transition-all duration-500">
+                <!-- Project content will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 sm:py-20 px-6 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-8">Let's build something <span class="text-gradient">impactful</span>.</h2>
+                <div class="space-y-4 flex flex-col items-center md:items-start">
+                    <a href="mailto:Gbenovieobhoo@gmail.com" class="flex items-center gap-4 text-zinc-400 hover:text-white transition-colors group">
+                        <div class="p-3 rounded-xl bg-zinc-900 group-hover:bg-emerald-500/20 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-sm sm:text-base">Gbenovieobhoo@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-between items-center md:items-end gap-8">
+                <div class="flex gap-4 sm:gap-6">
+                    <a href="https://linkedin.com/in/gbenovie-obhoo" target="_blank" rel="noopener noreferrer" class="p-3 sm:p-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </a>
+                    <a href="https://x.com/Alphys_io" target="_blank" rel="noopener noreferrer" class="p-3 sm:p-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </a>
+                </div>
+                
+                <div class="text-zinc-600 text-xs sm:text-sm text-center md:text-right">
+                    © <span id="current-year"></span> ALPHYS. Storytelling through Data.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Constants
+        const PROJECTS = [
+            {
+                title: "HR+Map Project",
+                link: "https://github.com/Alphys-io/HR-Map-Data-Analysis-Dashboard-Report_PowerBI",
+                description: "A collection of data analytics projects exploring workforce dynamics and demographic trends, built using real-world datasets with practical business and insights. Power BI was used for this project.",
+                image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1000",
+            },
+            {
+                title: "Product Analysis",
+                link: "https://github.com/Alphys-io/Tribe-Product-Rating-Analysis",
+                description: "This project provides a comprehensive analysis of product ratings and performance data from Tribe, an e-commerce platform. By examining customer sentiment across 9 product categories and 1,465 unique products, the analysis identifies top performers and underperforming segments.",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+            },
+            {
+                title: "Product Sales Analysis",
+                link: "https://github.com/Alphys-io/Retail-Store-Product-Sales-Analysis",
+                description: "A comprehensive Excel-based analysis of retail product sales data to generate actionable insights for sales improvement and marketing strategy optimization.",
+                image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=1000",
+            },
+            {
+                title: "Africa Disease Outbreak Analysis",
+                link: "https://github.com/Alphys-io/Africa-Disease-Outbreak-Analysis-Project",
+                description: "Comprehensive exploratory data analysis and dashboard visualization of disease outbreaks across Africa, focusing on regional patterns, patient outcomes, and demographic vulnerabilities.",
+                image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1000",
+            }
+        ];
+
+        let currentProjectIndex = 0;
+
+        // DOM Elements
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const navLogo = document.getElementById('nav-logo');
+        const projectContainer = document.getElementById('project-container');
+        const prevBtn = document.getElementById('prev-project');
+        const nextBtn = document.getElementById('next-project');
+        const currentYearSpan = document.getElementById('current-year');
+
+        // Set current year
+        currentYearSpan.textContent = new Date().getFullYear();
+
+        // Mobile Menu Logic
+        menuToggle.addEventListener('click', () => {
+            const isOpen = !dropdownMenu.classList.contains('hidden');
+            const menuLinks = document.querySelectorAll('.menu-link');
+            
+            if (isOpen) {
+                menuLinks.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-4');
+                });
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                    document.body.classList.remove('menu-open');
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }, 300);
+            } else {
+                dropdownMenu.classList.remove('hidden');
+                document.body.classList.add('menu-open');
+                menuIcon.setAttribute('data-lucide', 'x');
+                setTimeout(() => {
+                    menuLinks.forEach((link, i) => {
+                        setTimeout(() => {
+                            link.classList.remove('opacity-0', 'translate-y-4');
+                        }, i * 100);
+                    });
+                }, 50);
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const menuLinks = document.querySelectorAll('.menu-link');
+                menuLinks.forEach(l => {
+                    l.classList.add('opacity-0', 'translate-y-4');
+                });
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                    document.body.classList.remove('menu-open');
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }, 300);
+            });
+        });
+
+        // Scroll Logic for Nav Logo
+        window.addEventListener('scroll', () => {
+            const scrollPercent = window.scrollY / window.innerHeight;
+            if (scrollPercent > 0.15) {
+                navLogo.classList.add('nav-logo-hidden');
+            } else {
+                navLogo.classList.remove('nav-logo-hidden');
+            }
+        });
+
+        // Project Slider Logic
+        function renderProject(index) {
+            const project = PROJECTS[index];
+            projectContainer.style.opacity = '0';
+            projectContainer.style.transform = 'translateX(20px)';
+            
+            setTimeout(() => {
+                projectContainer.innerHTML = `
+                    <a 
+                        href="${project.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden glass"
+                    >
+                        <img 
+                            src="${project.image}"
+                            alt="${project.title}"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 sm:p-8">
+                            <div class="flex items-center gap-2 text-white text-sm sm:text-base font-medium">
+                                View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="space-y-4 sm:space-y-6 text-center lg:text-left">
+                        <div class="text-emerald-400 font-mono text-xs sm:text-sm tracking-widest uppercase">
+                            Project 0${index + 1}
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">${project.title}</h3>
+                        <p class="text-zinc-400 text-sm sm:text-lg leading-relaxed">
+                            ${project.description}
+                        </p>
+                        <div class="pt-4 sm:pt-6">
+                            <a 
+                                href="${project.link}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold group"
+                            >
+                                Explore Case Study
+                                <div class="w-8 sm:w-12 h-px bg-white group-hover:w-16 sm:group-hover:w-20 transition-all"></div>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                lucide.createIcons();
+                projectContainer.style.opacity = '1';
+                projectContainer.style.transform = 'translateX(0)';
+            }, 300);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentProjectIndex = (currentProjectIndex - 1 + PROJECTS.length) % PROJECTS.length;
+            renderProject(currentProjectIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentProjectIndex = (currentProjectIndex + 1) % PROJECTS.length;
+            renderProject(currentProjectIndex);
+        });
+
+        // Initial Render
+        renderProject(0);
+    </script>
+</body>
+</html>
