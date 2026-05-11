@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALPHYS | Data Analyst & Storyteller</title>
-    <meta name="description" content="Innovative Data Analyst and Computer Science graduate specializing in transforming raw data into meaningful narratives and actionable business insights.">
+    <meta name="description" content="Innovative data analyst and Computer Science graduate specializing in transforming raw data into meaningful narratives and actionable business insights.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,53 +122,43 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex flex-col items-center justify-center overflow-hidden px-4">
-        <!-- Background Elements -->
+    <section id="hero" class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <!-- Full Screen Background Hero Image -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-emerald-500/10 rounded-full blur-[80px] sm:blur-[120px]"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-[80px] sm:blur-[120px]"></div>
+            <img 
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000" 
+                alt="Hero Background"
+                class="w-full h-full object-cover opacity-25 grayscale blur-[1px]"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/80"></div>
+            <!-- Depth Blobs -->
+            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] animate-pulse delay-700"></div>
         </div>
 
-        <!-- Glassmorphic Composition -->
-        <div class="relative z-10 flex flex-col items-center w-full">
-            <div class="relative w-64 h-80 sm:w-80 sm:h-96 flex items-center justify-center">
-                <!-- The Hand Image -->
-                <img 
-                    src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=800" 
-                    alt="Hand"
-                    class="absolute bottom-0 w-full h-auto object-contain opacity-80 grayscale brightness-125"
-                    style="filter: drop-shadow(0 0 20px rgba(255,255,255,0.1)); mask-image: linear-gradient(to top, transparent, black 20%);"
-                >
-
-                <!-- Glass Box -->
-                <div class="absolute inset-0 glass rounded-3xl flex items-center justify-center overflow-hidden">
-                    <!-- Branded Logo -->
-                    <div class="relative">
-                        <div class="animate-bounce-slow">
-                            <svg viewBox="0 0 100 100" class="w-24 h-24 sm:w-32 sm:h-32 text-white/90 drop-shadow-2xl" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M50 5L95 50L50 95L5 50L50 5Z" stroke="currentColor" stroke-width="1" />
-                                <path d="M50 15L85 50L50 85L15 50L50 15Z" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hero Text -->
-            <div class="mt-8 sm:mt-12 text-center w-full px-4">
-                <h1 class="text-4xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-[0.2em] leading-none block pl-[0.3em] animate-fade-in-up">
+        <!-- Hero Content Center -->
+        <div class="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-6">
+            <div class="text-center group">
+                <h1 class="text-5xl sm:text-8xl md:text-[10rem] font-display font-black uppercase tracking-[0.25em] leading-none flex items-center justify-center animate-fade-in-up">
                     ALPHYS
+                    <span class="inline-block ml-2 sm:ml-4 flex-shrink-0 animate-bounce-slow">
+                        <svg viewBox="0 0 100 100" class="w-[0.5em] h-[0.5em] sm:w-[0.6em] sm:h-[0.6em] text-emerald-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 5L95 50L50 95L5 50L50 5Z" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M50 15L85 50L50 85L15 50L50 15Z" stroke="currentColor" stroke-width="0.7" opacity="0.3" />
+                        </svg>
+                    </span>
                 </h1>
-                <p class="text-sm sm:text-xl md:text-2xl font-light tracking-[0.3em] md:tracking-[0.5em] uppercase text-zinc-400 mt-1 sm:mt-2 block w-full pl-[0.4em] md:pl-[0.5em] animate-fade-in-up delay-300">
+                <div class="h-px w-24 sm:w-48 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent mx-auto mt-8 mb-6"></div>
+                <p class="text-sm sm:text-xl md:text-2xl font-light tracking-[0.4em] md:tracking-[0.6em] uppercase text-zinc-400 animate-fade-in-up delay-300">
                     Within Your Reach
                 </p>
-            </div>
-        </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-pulse">
-            <span class="text-[10px] uppercase tracking-[0.5em] text-zinc-500 font-light">Explore</span>
-            <div class="w-px h-12 bg-gradient-to-b from-emerald-500 to-transparent"></div>
+                <!-- Animated Explore Text -->
+                <div class="mt-16 flex flex-col items-center gap-4 animate-fade-in-up delay-[800ms]">
+                    <h3 class="text-[10px] uppercase tracking-[0.6em] text-emerald-500/80 font-medium animate-pulse">Explore</h3>
+                    <div class="w-px h-16 bg-gradient-to-b from-emerald-500 to-transparent"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -179,10 +169,11 @@
                 <div class="w-full max-w-[220px] sm:max-w-[350px] aspect-square rounded-full border border-zinc-800 p-3 sm:p-4 relative">
                     <div class="absolute inset-0 rounded-full border border-emerald-500/20 animate-pulse"></div>
                     <div class="w-full h-full rounded-full overflow-hidden bg-zinc-900 flex items-center justify-center">
+                        <!-- Analyst img -->
                         <img 
                             src="img.png" 
-                            alt="Alphys"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                            alt="Gbenovie Obhoo"
+                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                             referrerPolicy="no-referrer"
                         >
                     </div>
@@ -224,10 +215,10 @@
                         <div class="flex flex-wrap justify-center md:justify-start gap-3">
                             <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Excel</span>
                             <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">SQL</span>
-                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Power-BI</span>
                             <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Python</span>
                             <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Microsoft Office 365</span>
-                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Data Cleaning</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">ETL</span>
+                            <span class="px-3 sm:px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs sm:text-sm hover:border-emerald-500/50 transition-colors">Data Visualization</span>
                         </div>
                     </div>
 
@@ -250,32 +241,17 @@
     </section>
 
     <!-- Projects Slider Section -->
-    <section id="projects" class="py-20 sm:py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-12 sm:mb-16 flex flex-col sm:flex-row justify-between items-center sm:items-end gap-8">
+    <section id="projects" class="py-20 sm:py-32">
+        <div class="max-w-7xl mx-auto px-6 mb-16 sm:mb-24">
             <div class="text-center sm:text-left">
                 <h2 class="text-4xl sm:text-5xl font-display font-bold">Selected Works</h2>
                 <p class="text-zinc-500 mt-4">Exploring workforce dynamics, product performance, and global health trends.</p>
             </div>
-            <!-- Slider Controls: Visible only on Tablet -->
-            <div class="hidden md:flex lg:hidden gap-4">
-                <button id="prev-project" class="p-3 sm:p-4 rounded-full border border-zinc-800 hover:bg-zinc-900 transition-colors">
-                    <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                </button>
-                <button id="next-project" class="p-3 sm:p-4 rounded-full border border-zinc-800 hover:bg-zinc-900 transition-colors">
-                    <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                </button>
-            </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <!-- Slider View: Tablet only -->
-            <div id="project-slider-view" class="hidden md:grid lg:hidden grid-cols-1 gap-8 items-center transition-all duration-500">
-                <!-- Slider content injected by JS -->
-            </div>
-
-            <!-- Static View: Mobile (List) & Desktop (Grid) -->
-            <div id="project-static-view" class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 md:hidden lg:grid">
-                <!-- Static content injected by JS -->
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="project-list" class="space-y-20 sm:space-y-32">
+                <!-- Project content will be injected here by JS -->
             </div>
         </div>
     </section>
@@ -288,7 +264,7 @@
                 <div class="space-y-4 flex flex-col items-center md:items-start">
                     <a href="mailto:Gbenovieobhoo@gmail.com" class="flex items-center gap-4 text-zinc-400 hover:text-white transition-colors group">
                         <div class="p-3 rounded-xl bg-zinc-900 group-hover:bg-emerald-500/20 transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                         </div>
                         <span class="text-sm sm:text-base">Gbenovieobhoo@gmail.com</span>
                     </a>
@@ -298,10 +274,10 @@
             <div class="flex flex-col justify-between items-center md:items-end gap-8">
                 <div class="flex gap-4 sm:gap-6">
                     <a href="https://linkedin.com/in/gbenovie-obhoo" target="_blank" rel="noopener noreferrer" class="p-3 sm:p-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition-colors">
-                        <i data-lucide="linkedin" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6 text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
                     <a href="https://x.com/Alphys_io" target="_blank" rel="noopener noreferrer" class="p-3 sm:p-4 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition-colors">
-                        <i data-lucide="twitter" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 sm:w-6 sm:h-6 text-white"><path d="M4 4l11.733 16H20L8.267 4H4z"/><path d="M4 20l6.768-6.768m2.464-2.464L20 4"/></svg>
                     </a>
                 </div>
                 
@@ -353,10 +329,7 @@
         const menuIcon = document.getElementById('menu-icon');
         const dropdownMenu = document.getElementById('dropdown-menu');
         const navLogo = document.getElementById('nav-logo');
-        const sliderView = document.getElementById('project-slider-view');
-        const staticView = document.getElementById('project-static-view');
-        const prevBtn = document.getElementById('prev-project');
-        const nextBtn = document.getElementById('next-project');
+        const projectList = document.getElementById('project-list');
         const currentYearSpan = document.getElementById('current-year');
 
         // Set current year
@@ -418,121 +391,58 @@
             }
         });
 
-        // Project Slider Logic (Tablet)
-        function renderSliderProject(index) {
-            const project = PROJECTS[index];
-            sliderView.style.opacity = '0';
-            sliderView.style.transform = 'translateX(20px)';
-            
-            setTimeout(() => {
-                sliderView.innerHTML = `
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
+        // Project List Logic
+        function renderProjects() {
+            projectList.innerHTML = PROJECTS.map((project, index) => `
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center group">
+                    <div class="${index % 2 === 1 ? 'lg:order-2' : ''}">
                         <a 
                             href="${project.link}"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden glass"
+                            class="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden glass block"
                         >
                             <img 
                                 src="${project.image}"
                                 alt="${project.title}"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100"
                             >
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 sm:p-8">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 sm:p-8">
                                 <div class="flex items-center gap-2 text-white text-sm sm:text-base font-medium">
-                                    View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
+                                    View on GitHub <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                                 </div>
                             </div>
                         </a>
-
-                        <div class="space-y-4 sm:space-y-6 text-center md:text-left">
-                            <div class="text-emerald-400 font-mono text-xs sm:text-sm tracking-widest uppercase">
-                                Project 0${index + 1}
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">${project.title}</h3>
-                            <p class="text-zinc-400 text-sm sm:text-lg leading-relaxed">
-                                ${project.description}
-                            </p>
-                            <div class="pt-4 sm:pt-6">
-                                <a 
-                                    href="${project.link}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold group"
-                                >
-                                    Explore Case Study
-                                    <div class="w-8 sm:w-12 h-px bg-white group-hover:w-16 sm:group-hover:w-20 transition-all"></div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-                `;
-                lucide.createIcons();
-                sliderView.style.opacity = '1';
-                sliderView.style.transform = 'translateX(0)';
-            }, 300);
-        }
 
-        // Project Static Logic (Mobile List & Desktop Grid)
-        function renderStaticProjects() {
-            staticView.innerHTML = PROJECTS.map((project, index) => `
-                <div class="space-y-6 group">
-                    <a 
-                        href="${project.link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden glass block"
-                    >
-                        <img 
-                            src="${project.image}"
-                            alt="${project.title}"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 sm:p-8">
-                            <div class="flex items-center gap-2 text-white text-sm sm:text-base font-medium">
-                                View on GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="space-y-4 text-center lg:text-left">
+                    <div class="space-y-4 sm:space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''} text-center lg:text-left">
                         <div class="text-emerald-400 font-mono text-xs sm:text-sm tracking-widest uppercase">
                             Project 0${index + 1}
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-display font-bold">${project.title}</h3>
-                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                        <h3 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold hover:text-emerald-400 transition-colors">
+                            <a href="${project.link}" target="_blank" rel="noopener noreferrer">${project.title}</a>
+                        </h3>
+                        <p class="text-zinc-400 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             ${project.description}
                         </p>
-                        <div class="pt-2">
+                        <div class="pt-4">
                             <a 
                                 href="${project.link}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="inline-flex items-center gap-3 text-white text-sm font-bold group"
+                                class="inline-flex items-center gap-3 text-white text-sm sm:text-base font-bold group"
                             >
                                 Explore Case Study
-                                <div class="w-8 h-px bg-white group-hover:w-12 transition-all"></div>
+                                <div class="w-12 h-px bg-emerald-500/50 group-hover:w-20 group-hover:bg-emerald-500 transition-all"></div>
                             </a>
                         </div>
                     </div>
                 </div>
             `).join('');
-            lucide.createIcons();
         }
 
-        prevBtn.addEventListener('click', () => {
-            currentProjectIndex = (currentProjectIndex - 1 + PROJECTS.length) % PROJECTS.length;
-            renderSliderProject(currentProjectIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentProjectIndex = (currentProjectIndex + 1) % PROJECTS.length;
-            renderSliderProject(currentProjectIndex);
-        });
-
         // Initial Render
-        renderSliderProject(0);
-        renderStaticProjects();
+        renderProjects();
     </script>
 </body>
 </html>
