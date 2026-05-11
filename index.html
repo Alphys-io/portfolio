@@ -6,6 +6,9 @@
     <title>ALPHYS | Data Analyst & Storyteller</title>
     <meta name="description" content="Innovative data analyst and Computer Science graduate specializing in transforming raw data into meaningful narratives and actionable business insights.">
     
+    <!-- Preload Hero Background -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +132,8 @@
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000" 
                 alt="Hero Background"
                 class="w-full h-full object-cover opacity-25 grayscale blur-[1px]"
+                fetchpriority="high"
+                loading="eager"
             >
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/80"></div>
             <!-- Depth Blobs -->
@@ -137,7 +142,7 @@
         </div>
 
         <!-- Hero Content Center -->
-        <div class="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-6">
+        <div class="relative z-10 flex flex-col items-center max-w-7xl mx-auto px-6 translate-y-12">
             <div class="text-center group">
                 <h1 class="text-5xl sm:text-8xl md:text-[10rem] font-display font-black uppercase tracking-[0.25em] leading-none flex items-center justify-center animate-fade-in-up">
                     ALPHYS
@@ -169,7 +174,7 @@
                 <div class="w-full max-w-[220px] sm:max-w-[350px] aspect-square rounded-full border border-zinc-800 p-3 sm:p-4 relative">
                     <div class="absolute inset-0 rounded-full border border-emerald-500/20 animate-pulse"></div>
                     <div class="w-full h-full rounded-full overflow-hidden bg-zinc-900 flex items-center justify-center">
-                        <!-- Analyst img -->
+                        <!-- Analyst Img -->
                         <img 
                             src="img.png" 
                             alt="Gbenovie Obhoo"
